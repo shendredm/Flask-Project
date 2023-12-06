@@ -1,0 +1,30 @@
+<!DOCTYPE html>>
+<html>
+   <body>
+      <h2>QuoteForm</h2>
+      <form action="" method="post">
+          {{ form.csrf_token }}
+          <p>
+              {% for error in form.errors %}
+                  <span style="color: red;">[{{ error }}]</span><br>
+              {% endfor %}
+          </p>
+          <p>
+              {{ form.author.label }} : {{ form.author }}<br>
+              {% for error in form.author.errors %}
+                  <span style="color: red;">[{{ error }}]</span><br>
+      
+              {% endfor %}
+      
+          </p>
+          <p>
+              {{ form.quote.label }} : {{ form.quote }}<br>
+              {% for error in form.quote.errors %}
+                  <span style="color: red;">[{{ error }}]</span><br>
+              {% endfor %}
+          </p>
+      
+          <p>{{ form.submit }}</p>
+      </form>
+      </body>
+</html>
